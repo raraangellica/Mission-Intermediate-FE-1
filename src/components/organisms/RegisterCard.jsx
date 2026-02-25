@@ -16,6 +16,14 @@ const RegisterCard = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirm = () => {
+    setShowConfirm(!showConfirm);
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -46,10 +54,6 @@ const RegisterCard = () => {
     alert("Register berhasil!");
   };
 
-  const handleGoogleRegister = () => {
-    alert("Register menggunakan Google (simulasi)");
-  };
-
   return (
     <div className="flex flex-col items-center  bg-[rgba(24,26,28,0.84)] w-[306px] h-[452.28px] rounded-lg p-6 md:w-[529px] md:h-[778px]">
       <HeaderForm name="Daftar" />
@@ -65,19 +69,31 @@ const RegisterCard = () => {
           onChange={handleChange}
         />
 
-        <Input
-          label="Kata Sandi"
-          name="password"
-          placeholder="Masukan kata sandi"
-          value={formData.password}
-          onChange={handleChange}
-          showToggle
-          isVisible={showPassword}
-          onToggle={() => setShowPassword(!showPassword)}
-          type={showPassword ? "text" : "password"}
-        />
+        <div className="h-[66px] md:h-[78.9] relative">
+          <Input
+            label="Kata Sandi"
+            name="password"
+            placeholder="Masukan kata sandi"
+            value={formData.password}
+            onChange={handleChange}
+            showToggle
+            isVisible={showPassword}
+            onToggle={() => setShowPassword(!showPassword)}
+            type={showPassword ? "text" : "password"}
+          />
+          <span
+            onClick={togglePassword}
+            className="absolute right-3 top-[87%] cursor-pointer md:top-[70%] md:right-4"
+          >
+            {showPassword ? (
+              <Eye className="w-[11.5px] h-[9.5px] md:w-5 md:h-5" />
+            ) : (
+              <EyeOff className="w-[11.5px] h-[9.5px] md:w-5 md:h-5" />
+            )}
+          </span>
+        </div>
 
-        <div className="flex flex-col gap-[7px] md:gap-3">
+        <div className="flex flex-col gap-[7px] md:gap-3 h-[66px] md:h-[78.9] relative">
           <Input
             label="Konfimasi Kata Sandi"
             name="confirmPassword"
@@ -85,10 +101,21 @@ const RegisterCard = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
             showToggle
-            isVisible={showPassword}
-            onToggle={() => setShowPassword(!showPassword)}
-            type={showPassword ? "text" : "password"}
+            isVisible={showConfirm}
+            onToggle={() => setShowConfirm(!showConfrim)}
+            type={showConfirm ? "text" : "password"}
           />
+          <span
+            onClick={toggleConfirm}
+            className="absolute right-3 top-[87%] cursor-pointer md:top-[70%] md:right-4"
+          >
+            {showConfirm ? (
+              <Eye className="w-[11.5px] h-[9.5px] md:w-5 md:h-5" />
+            ) : (
+              <EyeOff className="w-[11.5px] h-[9.5px] md:w-5 md:h-5" />
+            )}
+          </span>
+
           <p className="text-[rgba(193,194,196,1)]">
             Belum punya akun?{" "}
             <NavLink
@@ -104,7 +131,7 @@ const RegisterCard = () => {
 
         <div className="flex flex-col items-center w-[258px] h-[79.33px] gap-1 md:w-[449px] md:h-[133px] md:gap-2">
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <ButtonSubmit />
+          <ButtonSubmit name="Daftar" />
 
           <p>Atau</p>
 

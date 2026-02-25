@@ -1,12 +1,12 @@
 import GoogleLogo from "../../assets/GoogleLogo.png";
 
-export const ButtonSubmit = () => {
+export const ButtonSubmit = ({ name }) => {
   return (
     <button
       type="submit"
       className="w-[258px] h-[30.17px] rounded-[13.86px] border-[1px] border-[rgba(231,227,252,0.23)] px-[11.55px] py-[8.09px] bg-[rgba(61,65,66,1)] md:w-[449px] md:h-[50px] md:rounded-3xl md:px-[20px] md:py-[24px] md:font-[600]"
     >
-      Masuk
+      {name}
     </button>
   );
 };

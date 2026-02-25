@@ -41,10 +41,6 @@ const LoginCard = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    alert("Login menggunakan yang lain bang, Ini Hanya Simulasi!");
-  };
-
   return (
     <div className="flex flex-col items-center  bg-[rgba(24,26,28,0.84)] w-[306px] h-[384px] rounded-lg p-6 md:w-[529px] md:h-[663px]">
       <HeaderForm name="Masuk" />
@@ -64,9 +60,9 @@ const LoginCard = () => {
           {/* ini tolong juga ybg ga mau dikasih gap 12 */}
           <div className="h-[66px] md:h-[78.9] relative">
             <Input
-              label="Password"
+              label="Kata Sandi"
               name="password"
-              placeholder="Password"
+              placeholder="Masukkan kata sandi"
               value={formData.password}
               onChange={handleChange}
               showToggle
@@ -103,7 +99,7 @@ const LoginCard = () => {
 
         <div className="flex flex-col items-center w-[258px] h-[79.33px] gap-1 md:w-[449px] md:h-[133px] md:gap-2">
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <ButtonSubmit />
+          <ButtonSubmit name="Masuk" />
 
           <p>Atau</p>
 
