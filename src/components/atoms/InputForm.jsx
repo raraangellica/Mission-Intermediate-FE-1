@@ -1,4 +1,6 @@
 import { useId } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 
 const Input = ({
   label,
@@ -7,15 +9,21 @@ const Input = ({
   placeholder,
   value,
   onChange,
+  isPassword = false,
   showToggle = false,
   isVisible,
   onToggle,
 }) => {
   const id = useId();
 
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <div className="flex flex-col items-center h-11.5 w-64.5 md:w-[449px] gap-[6px]">
-      <div className="self-start">
+    <div className="items-start w-full inline-block">
+      <div className="mb-2">
         <label
           htmlFor={id}
           className="text-[10px] font-normal leading-[140%] md:text-[18px]"
@@ -25,15 +33,40 @@ const Input = ({
       </div>
 
       <div>
-        <input
-          id={id}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          className="w-64 h-7 pl-[11.55px] py-[8.09px] border-[0.58px] border-solid border-[rgba(231,227,252,1)] gap-[5.7px] rounded-xl placeholder:px-[11.55px] md:placeholder:px-5 md:w-[449px] md:h-[47px] md:rounded-3xl"
-        />
+        {!isPassword ? (
+          <input
+            id={id}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            className="w-full h-10 pl-[11.55px] py-[8.09px] border-[0.58px] border-solid border-[rgba(231,227,252,1)] gap-[5.7px] rounded-full"
+          />
+        ) : (
+          <div className="flex flex-row justify-between w-full h-7 border-[0.58px] border-solid border-[rgba(231,227,252,1)] rounded-full items-center px-3 h-10">
+            <input
+              id={id}
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              value={value}
+              onChange={onChange}
+              showToggle
+              isVisible={showPassword}
+              onToggle={() => setShowPassword(!showPassword)}
+              type={showPassword ? "text" : "password"}
+            />
+
+            <span onClick={togglePassword} className="">
+              {showPassword ? (
+                <Eye className="w-[11.5px] h-[9.5px]" />
+              ) : (
+                <EyeOff className="w-[11.5px] h-[9.5px]" />
+              )}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

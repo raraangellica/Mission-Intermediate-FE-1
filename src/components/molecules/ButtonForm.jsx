@@ -4,7 +4,7 @@ export const ButtonSubmit = ({ name }) => {
   return (
     <button
       type="submit"
-      className="w-[258px] h-[30.17px] rounded-[13.86px] border-[1px] border-[rgba(231,227,252,0.23)] px-[11.55px] py-[8.09px] bg-[rgba(61,65,66,1)] md:w-[449px] md:h-[50px] md:rounded-3xl md:px-[20px] md:py-[24px] md:font-[600]"
+      className="w-full rounded-full border-[1px] border-[rgba(231,227,252,0.23)] px-[11.55px] py-[8.09px] bg-[rgba(61,65,66,1)] md:rounded-3xl"
     >
       {name}
     </button>
@@ -24,13 +24,9 @@ export const ButtonGoogleLogin = () => {
     <button
       type="button"
       onClick={HandleGoogleLogin}
-      className="!bg-transparent w-[258px] h-[27px] rounded-xl border-[1px] border-[rgba(231,227,252,0.23)]  px-[11.55px] py-[8.09px] cursor-pointer flex items-center justify-center gap-2 md:w-[449px] md:h-[47px] md:rounded-3xl md:px-5 md:py-[14px]"
+      className="!bg-transparent w-full rounded-full border-[1px] border-[rgba(231,227,252,0.23)]  px-[11.55px] py-[8.09px] cursor-pointer flex items-center justify-center gap-2"
     >
-      <img
-        src={GoogleLogo}
-        alt="Google Logo"
-        className="w-[10px] lg:w-[18px]"
-      />
+      <img src={GoogleLogo} alt="Google Logo" className="w-[25px] h-[25px]" />
       <span>Masuk dengan Google</span>
     </button>
   );
@@ -41,7 +37,7 @@ export const ButtonGoogleRegister = () => {
     <button
       type="button"
       onClick={HandleGoogleRegister}
-      className="!bg-transparent w-[258px] h-[27px] rounded-xl border-[1px] border-[rgba(231,227,252,0.23)]  px-[11.55px] py-[8.09px] cursor-pointer flex items-center justify-center gap-2 md:w-[449px] md:h-[47px] md:rounded-3xl md:px-5 md:py-[14px]"
+      className="!bg-transparent h-[27px] rounded-xl border-[1px] border-[rgba(231,227,252,0.23)]  px-[11.55px] py-[8.09px] cursor-pointer flex items-center justify-center gap-2 md:rounded-3xl md:px-5 md:py-[14px] md:h-[47px] w-full"
     >
       <img
         src={GoogleLogo}
