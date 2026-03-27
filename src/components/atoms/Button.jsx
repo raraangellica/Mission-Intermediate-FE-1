@@ -28,18 +28,3 @@ const Button = ({
 
 export default Button;
 
-// export const Button = ({ children, variant = "primary", ...props }) => {
-//   const baseStyle =
-//     "px-6 py-2 rounded-md font-bold flex items-center gap-2 transition";
-//   const variants = {
-//     primary: "bg-blue-600 text-white hover:bg-blue-700",
-//     secondary:
-//       "bg-gray-600/50 text-white hover:bg-gray-500/50 backdrop-blur-md",
-//   };
-
-//   return (
-//     <button className={`${baseStyle} ${variants[variant]}`} {...props}>
-//       {children}
-//     </button>
-//   );
-// };
