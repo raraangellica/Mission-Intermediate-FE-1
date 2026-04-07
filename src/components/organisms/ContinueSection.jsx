@@ -16,7 +16,7 @@ const ContinueSection = () => {
   const sliderRef = useRef(null);
   const slide = (direction) => {
     const { current } = sliderRef;
-    const scrollAmount = 300; // Jarak geser dalam pixel
+    const scrollAmount = 300;
     if (direction === "left") {
       current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -29,7 +29,6 @@ const ContinueSection = () => {
         Melanjutkan Tonton Film
       </h3>
       <div className="relative group w-full max-w-[1280px] h-auto object-contain mt-5 md:mt-8 ">
-        {/* Tombol Navigasi Kiri */}
         <button
           onClick={() => slide("left")}
           className="absolute rounded-full left-[-25px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -37,13 +36,12 @@ const ContinueSection = () => {
           <ArrowLeft />
         </button>
 
-        {/* Container List */}
         <div
           ref={sliderRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto scroll-smooth md:overflow-hidden h-38 md:h-[40.5] snap-x snap-mandatory "
         >
           {Movies.filter((movie) => movie.watched === true)
-            .slice(0, 5) // Tambah limit agar bisa di-slide
+            .slice(0, 5)
             .map((movie) => (
               <div
                 key={movie.id}
@@ -61,7 +59,6 @@ const ContinueSection = () => {
             ))}
         </div>
 
-        {/* Tombol Navigasi Kanan */}
         <button
           onClick={() => slide("right")}
           className="absolute rounded-full right-[-25px] right-0 top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -79,7 +76,7 @@ export const Section2 = () => {
   const sliderRef = useRef(null);
   const slide = (direction) => {
     const { current } = sliderRef;
-    const scrollAmount = 300; // Jarak geser dalam pixel
+    const scrollAmount = 300;
     if (direction === "left") {
       current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -92,7 +89,6 @@ export const Section2 = () => {
         Top Rating Film dan Series Hari ini
       </h3>
       <div className="relative group w-full max-w-[1280px] h-auto object-contain mt-5 md:h-[365px]">
-        {/* Tombol Navigasi Kiri */}
         <button
           onClick={() => slide("left")}
           className="absolute rounded-full left-[-25px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -100,13 +96,12 @@ export const Section2 = () => {
           <ArrowLeft />
         </button>
 
-        {/* Container List */}
         <div
           ref={sliderRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto scroll-smooth md:overflow-hidden h-full snap-x snap-mandatory"
         >
           {Movies.filter((movie) => movie.new === true)
-            .slice(0, 6) // Tambah limit agar bisa di-slide
+            .slice(0, 6)
             .map((movie) => (
               <div
                 key={movie.id}
@@ -125,7 +120,6 @@ export const Section2 = () => {
             ))}
         </div>
 
-        {/* Tombol Navigasi Kanan */}
         <button
           onClick={() => slide("right")}
           className="absolute rounded-full right-[-25px] right-0 top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -141,7 +135,7 @@ export const Section3 = () => {
   const sliderRef = useRef(null);
   const slide = (direction) => {
     const { current } = sliderRef;
-    const scrollAmount = 300; // Jarak geser dalam pixel
+    const scrollAmount = 300;
     if (direction === "left") {
       current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -154,7 +148,6 @@ export const Section3 = () => {
         Film Trending
       </h3>
       <div className="relative group w-full max-w-[1280px] h-auto object-contain mt-5 md:h-[365px]">
-        {/* Tombol Navigasi Kiri */}
         <button
           onClick={() => slide("left")}
           className="absolute rounded-full left-[-25px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -162,7 +155,6 @@ export const Section3 = () => {
           <ArrowLeft />
         </button>
 
-        {/* Container List */}
         <div
           ref={sliderRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto scroll-smooth md:overflow-hidden h-full snap-x snap-mandatory"
@@ -186,7 +178,6 @@ export const Section3 = () => {
             ))}
         </div>
 
-        {/* Tombol Navigasi Kanan */}
         <button
           onClick={() => slide("right")}
           className="absolute rounded-full right-[-25px] right-0 top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -202,7 +193,7 @@ export const Section4 = () => {
   const sliderRef = useRef(null);
   const slide = (direction) => {
     const { current } = sliderRef;
-    const scrollAmount = 300; // Jarak geser dalam pixel
+    const scrollAmount = 300;
     if (direction === "left") {
       current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -215,7 +206,6 @@ export const Section4 = () => {
         Rilis Baru
       </h3>
       <div className="relative group w-full max-w-[1280px] h-auto object-contain mt-5 md:h-[365px]">
-        {/* Tombol Navigasi Kiri */}
         <button
           onClick={() => slide("left")}
           className="absolute rounded-full left-[-25px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -223,14 +213,13 @@ export const Section4 = () => {
           <ArrowLeft />
         </button>
 
-        {/* Container List */}
         <div
           ref={sliderRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto scroll-smooth md:overflow-hidden h-full snap-x snap-mandatory"
         >
           {Movies.filter((movie) => movie.newRls === true)
             .sort((a, b) => new Date(a.date) - new Date(b.date))
-            .slice(0, 6) // Tambah limit agar bisa di-slide
+            .slice(0, 6)
             .map((movie) => (
               <div
                 key={movie.id}
@@ -249,7 +238,6 @@ export const Section4 = () => {
             ))}
         </div>
 
-        {/* Tombol Navigasi Kanan */}
         <button
           onClick={() => slide("right")}
           className="absolute rounded-full right-[-25px] right-0 top-1/2 -translate-y-1/2 z-10 bg-[rgba(47,51,52,1)] p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"

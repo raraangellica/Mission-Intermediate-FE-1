@@ -10,9 +10,6 @@ const Input = ({
   value,
   onChange,
   isPassword = false,
-  showToggle = false,
-  isVisible,
-  onToggle,
 }) => {
   const id = useId();
 

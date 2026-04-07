@@ -8,14 +8,14 @@ const Button = ({
 }) => {
   // Base style untuk semua tombol (rounded, padding, font)
   const baseStyles =
-    "flex items-center justify-center gap-2 px-6 py-2 rounded-full font-bold transition-all duration-200 text-[12px] leading-[140%] tracking-[0.2px] md:text-[16px] h-full ";
+    "flex items-center justify-center gap-2 rounded-full  transition-all duration-200 text-[12px] leading-[140%] tracking-[0.2px] md:text-[16px] h-full  ";
 
   // Variasi gaya berdasarkan properti 'variant'
   const variants = {
-    primary: "bg-[rgba(15,30,147,1)] hover:bg-blue-800", // Biru (Mulai)
-    secondary: "bg-[rgba(47,51,52,1)] hover:bg-gray-700", // Abu-abu (Selengkapnya)
+    primary: "px-6 py-2 font-bold bg-[rgba(15,30,147,1)] hover:bg-blue-800",
+    secondary: "px-6 py-2  font-bold bg-[rgba(47,51,52,1)] hover:bg-gray-700",
     outline:
-      "border border-white/50 bg-transparent cursor-default text-white/50", // Border tipis (18+)
+      "border border-white/50 bg-transparent cursor-default text-white/50",
   };
 
   return (
@@ -27,4 +27,3 @@ const Button = ({
 };
 
 export default Button;
-

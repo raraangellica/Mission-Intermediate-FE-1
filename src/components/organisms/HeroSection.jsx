@@ -41,7 +41,7 @@ const HeroSection = () => {
       </video>
       <div className="w-full h-full absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(16,18,19,0.86)] to-[rgba(24,26,28,1)]"></div>
       <div className="absolute z-20 px-5 bottom-10 min-w-[320px] max-w-[1280px] w-full md:bottom-20 md:px-20 ">
-        <div className="flex flex-col md:mb-5 md:w-[668px] md:h-37">
+        <div className="flex flex-col mb-3 md:mb-5 md:w-[668px] md:h-37">
           <h1 className="text-2xl leading-[120%] font-bold md:leading-[110%] tracking-normal md:text-5xl">
             Duty After School
           </h1>
@@ -52,16 +52,16 @@ const HeroSection = () => {
             depan dalam perang.
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between h-[25px] md:h-11 ">
           <ButtonHeroSection />
           <button
             onClick={toggleMute}
-            className=" w-10 h-full py-2 px-2 border border-white/50 bg-transparent rounded-full cursor-pointer"
+            className="w-6 pl-[6px] pr-[7px] md:w-11 h-full  md:pl-[13px] md:pr-[13px] border border-white/50 bg-transparent rounded-full cursor-pointer"
           >
             {isMuted ? (
-              <Volume2 className="text-white/50" />
+              <Volume2 className="text-white/50 w-3 h- md:w-4.5 md:h-4.5" />
             ) : (
-              <VolumeOff className="text-white/50" />
+              <VolumeOff className="text-white/50 w-3 h- md:w-4.5 md:h-4.5" />
             )}
           </button>
         </div>
