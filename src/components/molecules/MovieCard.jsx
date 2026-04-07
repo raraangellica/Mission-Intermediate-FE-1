@@ -10,7 +10,7 @@ const MovieCard = ({ children, variant, className }) => {
 
 const Image = ({ src, alt, variant, className }) => {
   const variants = {
-    var1: "w-77.5 h-38 md:w-75.5 md:h-40.5",
+    var1: "w-77.5 h-38 md:w-75.5 md:h-40.5 bg-gradient-to-b from-transparent to-black opacity-80",
     var2: "w-[95px] h-[145px] md:w-[234px] md:h-[365px]",
   };
   return (
